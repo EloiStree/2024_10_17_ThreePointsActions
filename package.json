@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.elab.triangleaction",                              
+  "displayName": "Three Points Triangle Actions",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "Allows to use triangulation to create action or invoke action. Mainly created to be able to caliber 3D spacial environement in Unity3D for XR. Can be use to  much more.",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2024_10_17_ThreePointsActions.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
