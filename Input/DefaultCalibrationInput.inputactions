@@ -1,0 +1,114 @@
+{
+    "name": "DefaultCalibrationInput",
+    "maps": [
+        {
+            "name": "DefaultCalibrationXR",
+            "id": "86b80ff8-964f-46b7-9d43-5d4b945aa583",
+            "actions": [
+                {
+                    "name": "AddTrianglePoint",
+                    "type": "Button",
+                    "id": "add83a6a-df85-4591-a166-aac270b559bb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AddTriangleInvocation",
+                    "type": "Button",
+                    "id": "33fdd0f9-1329-46ac-af2a-b644c65db23c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StartConstructionOfTriangle",
+                    "type": "Button",
+                    "id": "6f172689-0fa6-4cea-b063-d3066c3210f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SaveMeshWithDate",
+                    "type": "Button",
+                    "id": "bc30ad99-3b62-425a-94ae-5a952c8dfac9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TryTriangleInvocation",
+                    "type": "Button",
+                    "id": "214565ed-10fa-4343-872b-793baa05be3b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cda22eac-0f7f-41b0-a82b-5912b8e886fa",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AddTrianglePoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06b42269-ec03-40be-ad2a-ab8aa17ff8ad",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AddTriangleInvocation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bef938e2-2956-4261-84a2-a468ac045648",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartConstructionOfTriangle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec577f2e-0ca9-4cd0-8863-ca27c781f0e3",
+                    "path": "<XRController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveMeshWithDate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbf7f9ce-2031-47f4-939d-1aedfafa76ba",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TryTriangleInvocation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

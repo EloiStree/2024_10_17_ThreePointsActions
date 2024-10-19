@@ -22,6 +22,7 @@ public class ThreePointsMono_RelayNextConstructTriangle : MonoBehaviour
     {
         m_triangle.SetThreePoints(start, middle, end);
         m_trianglePointReceived++;
+        CheckIfThirdTriangleReceived();
     }
     public void NotifyNewPoint(I_ThreePointsGet triangle)
     {
@@ -30,5 +31,6 @@ public class ThreePointsMono_RelayNextConstructTriangle : MonoBehaviour
         triangle.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
         m_triangle.SetThreePoints(start, middle, end);
         m_trianglePointReceived++;
+        CheckIfThirdTriangleReceived();
     }
 }

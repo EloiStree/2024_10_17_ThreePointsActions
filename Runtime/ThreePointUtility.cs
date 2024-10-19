@@ -69,7 +69,7 @@ public static class ThreePointUtility {
 
     public static bool IsVertical(I_ThreePointsGet t, float angleError=5)
     {
-        GetCrossDirection(t, out Vector3 directionForward);
+        GetCrossDirection(t, out Vector3 directionForward,false);
         float angle = Vector3.Angle(directionForward, Vector3.up);
         if(angle > 90)
         {
@@ -84,7 +84,7 @@ public static class ThreePointUtility {
     public static bool IsHorizontal(I_ThreePointsGet t,float angleError=5)
     {
 
-        GetCrossDirection(t, out Vector3 directionForward);
+        GetCrossDirection(t, out Vector3 directionForward, false);
         float angle = Vector3.Angle(directionForward, Vector3.up)-90;
         if (angle < 0)
         {
@@ -93,11 +93,85 @@ public static class ThreePointUtility {
         return angle < angleError;
     }
 
-    private static void GetCrossDirection(I_ThreePointsGet t, out Vector3 directionForward)
+    public static void GetCrossDirection(I_ThreePointsGet t, out Vector3 directionForward, bool inverse)
     {
         t.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
         directionForward = Vector3.Cross(
             middle - start
-            , end - start);
+            , middle - end);
+        if(inverse)
+        {
+            directionForward = -directionForward;
+        }
     }
+
+    public static void GetCentroid(I_ThreePointsGet triangle, out Vector3 centroid)
+    {
+        triangle.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
+        centroid = new Vector3(
+    (start.x + middle.x + end.x) / 3,
+    (start.y + middle.y + end.y) / 3,
+    (start.z + middle.z + end.z) / 3
+);
+    }
+
+    public static void GetClosestPoint(
+        I_ThreePointsGet triangle,
+        Vector3 toPoint,
+        out ThreePointCorner closestCorner,
+        out Vector3 closestPosition,
+        out float distance)
+    {
+        distance = float.MaxValue;
+        triangle.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
+        closestCorner = ThreePointCorner.Start;
+        closestPosition = start;
+        float distanceStart = Vector3.Distance(start, toPoint);
+        float distanceMiddle = Vector3.Distance(middle, toPoint);
+        float distanceEnd = Vector3.Distance(end, toPoint);
+        if (distanceStart < distance)
+        { closestCorner = ThreePointCorner.Start; distance = distanceStart; closestPosition = start; }
+        if (distanceMiddle < distance)
+        { closestCorner = ThreePointCorner.Middle; distance = distanceMiddle; closestPosition = middle; }
+        if (distanceEnd < distance)
+        { closestCorner = ThreePointCorner.End; distance = distanceEnd; closestPosition = end; }
+
+    }
+
+    public static void GetFarestPoint(
+        I_ThreePointsGet triangle,
+        Vector3 toPoint, 
+        out ThreePointCorner closestCorner,
+        out Vector3 closestPosition, 
+        out float distance)
+    {
+        
+        distance = 0;
+        triangle.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
+        closestCorner = ThreePointCorner.Start;
+        closestPosition = start;
+        float distanceStart = Vector3.Distance(start, toPoint);
+        float distanceMiddle = Vector3.Distance(middle, toPoint);
+        float distanceEnd = Vector3.Distance(end, toPoint);
+        if (distanceStart > distance)
+        { closestCorner = ThreePointCorner.Start; distance = distanceStart; closestPosition = start; }
+        if (distanceMiddle > distance)
+        { closestCorner = ThreePointCorner.Middle; distance = distanceMiddle; closestPosition = middle; }
+        if (distanceEnd > distance)
+        { closestCorner = ThreePointCorner.End; distance = distanceEnd; closestPosition = end; }
+
+    }
+
+
+
+    public static  void GetCrossProductMiddle(I_ThreePointsGet triangle,  out Vector3 cross)
+    {
+        triangle.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
+        cross = Vector3.Cross(middle - start, middle - end);
+    }
+
+
+
+
+
 }

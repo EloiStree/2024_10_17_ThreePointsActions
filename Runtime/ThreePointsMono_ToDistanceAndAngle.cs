@@ -198,6 +198,26 @@ public class ThreePointsTriangleDefault : I_ThreePointsDistanceAngleGet, I_Three
 
         }
     }
+
+    public void GetCrossProductMiddle(out Vector3 crossProduct)
+    {
+        Vector3 startToMiddle = m_triangle.m_middle - m_triangle.m_start;
+        Vector3 endToMiddle = m_triangle.m_middle - m_triangle.m_end;
+
+        crossProduct = Vector3.Cross(startToMiddle, endToMiddle);
+    }
+
+
+
+    public void Clear()
+    {
+       SetThreePoints(Vector3.zero, Vector3.right * 0.0001f, Vector3.up * 0.0001f);
+    }
+
+    public void GetCentroid(out Vector3 centroid)
+    {
+        centroid = (m_triangle.m_start + m_triangle.m_middle + m_triangle.m_end) / 3;
+    }
 }
 
 

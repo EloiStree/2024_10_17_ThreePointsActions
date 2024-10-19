@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class ThreePointsMono_PinchEvents : MonoBehaviour {
 
-    public Transform m_thumbTip;
-    public Transform m_indexTip;
+    public Transform m_fingerTipA;
+    public Transform m_fingerTipB;
 
     public bool m_isPinching = false;
     public float m_pinchDistance = 0.02f;
@@ -25,10 +25,10 @@ public class ThreePointsMono_PinchEvents : MonoBehaviour {
 
     public void Update()
     {
-        if (m_thumbTip == null || m_indexTip == null)
+        if (m_fingerTipA == null || m_fingerTipB == null)
             return;
 
-        m_currentDistance = Vector3.Distance(m_thumbTip.position, m_indexTip.position);
+        m_currentDistance = Vector3.Distance(m_fingerTipA.position, m_fingerTipB.position);
         bool isPinching = Mathf.Abs(m_currentDistance ) < m_pinchDistance;
         if (isPinching != m_isPinching ) {
             m_isPinching = isPinching;
@@ -45,7 +45,7 @@ public class ThreePointsMono_PinchEvents : MonoBehaviour {
     }
 
     public Vector3 GetPoint() { 
-        return (m_thumbTip.position + m_indexTip.position) / 2;
+        return (m_fingerTipA.position + m_fingerTipB.position) / 2;
     }
 
 }
