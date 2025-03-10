@@ -14,8 +14,6 @@ public class ThreePointsMono_MoveFromToTriangles : MonoBehaviour
 
     public bool m_useDebug;
 
-   
-
     [ContextMenu("Move and rotate")]
     public void MoveAndRotate()
     {
