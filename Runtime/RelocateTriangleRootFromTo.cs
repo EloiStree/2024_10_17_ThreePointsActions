@@ -1,6 +1,7 @@
 ﻿using Eloi;
 using UnityEngine;
 
+using Eloi.ThreePoints;
 public class RelocateTriangleRootFromTo {
 
 
@@ -11,8 +12,8 @@ public class RelocateTriangleRootFromTo {
 
         )
     {
-        I_ThreePointsGet from = fromTransform.m_triangle;
-        I_ThreePointsGet to= toTransform.m_triangle;
+        I_ThreePointsGet from = (I_ThreePointsGet) fromTransform.m_triangle;
+        I_ThreePointsGet to= (I_ThreePointsGet) toTransform.m_triangle;
 
         fromTransform.RefreshDataWithoutNotification();
         toTransform.RefreshDataWithoutNotification();

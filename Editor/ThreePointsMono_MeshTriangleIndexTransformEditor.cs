@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+namespace Eloi.ThreePoints { 
 [CustomEditor(typeof(ThreePointsMono_MeshTriangleIndexTransform))]
 public class ThreePointsMono_MeshTriangleIndexTransformEditor : Editor { 
 
@@ -21,5 +22,7 @@ public class ThreePointsMono_MeshTriangleIndexTransformEditor : Editor {
         base.OnInspectorGUI();
 
     }
+
+}
 
 }
