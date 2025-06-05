@@ -65,11 +65,11 @@ namespace Eloi.ThreePoints
                 Debug.DrawLine(start, end, Color.red);
 
                 m_whereToGoAnchor.GetCentroid(out Vector3 start2);
-                m_whereToGoAnchor.GetCrossProductMiddle(out Vector3 cross);
+                m_whereToGoAnchor.GetCrossProductAtMiddle(out Vector3 cross);
                 Debug.DrawLine(start2, start2 + cross, Color.cyan);
 
                 m_origineAnchor.GetCentroid(out Vector3 start3);
-                m_origineAnchor.GetCrossProductMiddle(out Vector3 cross3);
+                m_origineAnchor.GetCrossProductAtMiddle(out Vector3 cross3);
                 Debug.DrawLine(start3, start3 + cross3, Color.cyan);
             }
         }
